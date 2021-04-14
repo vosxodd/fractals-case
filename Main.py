@@ -12,6 +12,16 @@
 # один из вариантов улучшения кода - добавление смены цвета во фракталах. Ляпота
 # плюсом в работе будет рисование снежинок у некоторых фракталов
 
-
+def ice(order, size):#ледяной фрактал
+    if order == 0:          
+        forward(size)
+    else:
+        ice(order-1, size/2)   
+        left(90)
+        ice(order-1, size/4)
+        left(180)
+        ice(order-1, size/4)
+        left(90)
+        ice(order-1, size/2)
 
 
