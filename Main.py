@@ -23,7 +23,7 @@ def ice(order, size):#ледяной фрактал
         ice(order-1, size/4)
         left(90)
         ice(order-1, size/2)
-def branch(n, size):
+def branch(n, size):#ветка
     if n == 0:
         left(180)
         return
