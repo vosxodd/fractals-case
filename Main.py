@@ -40,4 +40,13 @@ def branch(n, size):#ветка
     forward(x)
     left(180)
     forward(size)
+def levi(order, size):#фрактал Леви
+    if order == 0:          
+        forward(size)
+    else:
+        left(45)
+        levi(order-1, size)   
+        right(90)
+        levi(order-1, size)
+        left(45)
 
