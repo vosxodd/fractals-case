@@ -67,3 +67,23 @@ def mincovski(order, size): # Кривая Минковского
         right(90)
         mincovski(order - 1, size / 4)
 
+        
+
+def draw_tree(height, angle): #Двоичное дерево
+    left(90)
+    draw_branch(height, angle)
+
+
+def draw_branch(height, angle): #Вспомогательная функция для двоичного дерева
+    if height == 0:
+        return
+    length = 200 * (height / 10)
+    rat = math.cos(math.radians(angle))
+    print(rat)
+    fd(length)
+    rt(angle)
+    draw_brach(height - 1, angle)
+    lt(angle * 2)
+    draw_brach(height - 1, -angle)
+    rt(angle)
+    fd(-length)
