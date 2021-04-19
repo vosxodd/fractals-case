@@ -22,6 +22,7 @@ def ice(order, size): # ледяной фрактал
         left(90)
         ice(order-1, size/2)
         
+        
 def branch(n, size): # ветка
     if n == 0:
         left(180)
@@ -38,6 +39,7 @@ def branch(n, size): # ветка
     left(180)
     forward(size)
     
+    
 def levi(order, size): # фрактал Леви
     if order == 0:          
         forward(size)
@@ -47,6 +49,7 @@ def levi(order, size): # фрактал Леви
         right(90)
         levi(order-1, size)
         left(45)
+        
         
 def mincovski(order, size): # Кривая Минковского
     if order == 0:
@@ -87,3 +90,43 @@ def draw_branch(height, angle): #Вспомогательная функция �
     draw_brach(height - 1, -angle)
     rt(angle)
     fd(-length)
+    
+    
+def koch(order, size):
+    if order == 0:
+        forward(size)
+    else:
+        koch(order-1, size/3)
+        left(60)
+        koch(order-1, size/3)
+        right(120)
+        koch(order-1, size/3)
+        left(60)
+        koch(order-1, size/3)    
+    
+    
+def main():
+    speed(500)
+    up()
+    goto(0,0)
+    down()
+    choice = input('Выберите фрактал для рисования из следующих:\n1) ледяной фрактал  2) бинарное дерево  3) ветка  4) кривая Коха  5) кривая Минковского  6) кривая Леви  7) фрактал Дракон\n').lower()
+    n = int(input('Глубина рекурсии:'))
+    a = int(input('Длина стороны:'))
+    if choice == 'ледяной фрактал':
+        ice(n, a)
+    elif choice == 'бинарное дерево':
+        draw_tree(n, a)
+    elif choice == 'ветка':
+        branch(n, a)
+    elif choice == 'кривая коха':
+        koch(n, a)
+    elif choice == 'кривая минковского':
+        mincovski(n, a)
+    elif choice == 'кривая леви':
+        levi(n, a)
+    elif choice == 'фрактал дракон':
+        dragon(n, a)
+    mainloop()
+
+main()
