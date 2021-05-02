@@ -1,5 +1,5 @@
 # Case-study #9
-# Developers:   Aksenov A. (%),
+# Developers:   Aksenov A. (35%),
 #               Soloveychik D. (40%),
 #               Labuzov A. (46%)
 
